@@ -1,14 +1,22 @@
+import { Input } from "postcss";
+import Footer from "../../components/footer/Footer";
+import Header from "../../components/header/Header";
 import Link from 'next/link';
 
-function Home() {
+
+function index() {
     return (
+        <>
+        <Header />
+            
         <div className="w-[90%] m-auto border-2 p-5">
+        <h1 className='text-center bg-lime-700 text-white my-5 p-3 text-[30px]'>Post Title</h1>
             
             {/* Main Box  */}
             <div className="sm:flex block">
 
                 {/* left box start */}
-                <div className="sm:w-[78%] sm:mr-5 flex w-auto sm:h-[350px] h-auto border-2 rounded-lg">                    
+                <div className="sm:w-[78%] sm:mr-5 flex w-auto h-auto border-2 rounded-lg">                    
                     <div className="text-side p-5 w-[80%]">
                         <p className=''>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline w-6 h-6">
@@ -21,10 +29,35 @@ function Home() {
                         <p className="antialiased text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid excepturi, quas corporis blanditiis minus, eos ex quis pariatur velit facilis aut. Ad consequuntur exercitationem quia pariatur eveniet molestiae, quae nemo similique maiores facere nesciunt saepe atque repellendus ipsa nulla nostrum doloremque nobis ratione commodi voluptatibus sapiente labore vel. Est, dolorem!
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit eius blanditiis excepturi autem ducimus dicta nostrum, ipsa praesentium asperiores nemo?</p>
                         
-                        <p><Link href="/post" className='border-b-2 text-lime-900'>
-                        More...                       
-                        </Link>
-                        </p>
+                        
+                        
+                        {/* Review section start */}
+                            <div class="flex items-center">
+                                <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>First star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Second star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Third star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Fourth star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <svg aria-hidden="true" class="w-5 h-5 text-gray-300 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Fifth star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                <p class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">4.95 out of 5</p>
+                            </div>
+                        {/* Review section end */}
+
+
+
+                        {/* commentsection start  */}
+                        <form class="max-w-2xl bg-white rounded-lg border p-2 mx-auto mt-20">
+                            <div class="px-3 mb-2 mt-2">
+                                <textarea placeholder="comment" class="w-full bg-gray-100 rounded border border-gray-400 leading-normal resize-none h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"></textarea>
+                            </div>
+                            <div class="flex justify-end px-4">
+                                <input type="submit" class="px-2.5 py-1.5 rounded-md text-white text-sm bg-indigo-500" value="Comment" />
+                            </div>
+                        </form>                        
+                        {/* commentsection end */}
+
+
+
+
 
 
                         {/* user like comment box  */}
@@ -95,7 +128,10 @@ function Home() {
 
 
         </div>
+
+        <Footer />
+        </>
     );
 }
 
-export default Home;
+export default index;

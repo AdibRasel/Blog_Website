@@ -1,8 +1,17 @@
+import Footer from '@/components/footer/Footer';
+import Header from '@/components/header/Header';
 import Link from 'next/link';
 
-function Home() {
+function index() {
     return (
+        <>
+        <Header />
+        
+
+
         <div className="w-[90%] m-auto border-2 p-5">
+
+        <h1 className='text-center bg-lime-700 text-white my-5 p-3 text-[30px]'>Leptop Blog</h1>
             
             {/* Main Box  */}
             <div className="sm:flex block">
@@ -21,7 +30,7 @@ function Home() {
                         <p className="antialiased text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid excepturi, quas corporis blanditiis minus, eos ex quis pariatur velit facilis aut. Ad consequuntur exercitationem quia pariatur eveniet molestiae, quae nemo similique maiores facere nesciunt saepe atque repellendus ipsa nulla nostrum doloremque nobis ratione commodi voluptatibus sapiente labore vel. Est, dolorem!
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit eius blanditiis excepturi autem ducimus dicta nostrum, ipsa praesentium asperiores nemo?</p>
                         
-                        <p><Link href="/post" className='border-b-2 text-lime-900'>
+                        <p><Link href="" className='border-b-2 text-lime-900'>
                         More...                       
                         </Link>
                         </p>
@@ -95,7 +104,10 @@ function Home() {
 
 
         </div>
+
+        <Footer />
+        </>
     );
 }
 
-export default Home;
+export default index;
