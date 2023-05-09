@@ -34,10 +34,10 @@ function Header() {
             <div className="UserProfileSide w-[33%] text-right">
 
                 <button>
-                    <Link href="">Login </Link>
+                    <Link className='ml-5' href="">Login </Link>
                 </button>
                 <button>
-                    <Link href=""> Registration </Link>
+                    <Link className='ml-5' href=""> Registration </Link>
                 </button>
 
             </div>
