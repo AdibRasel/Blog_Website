@@ -37,7 +37,7 @@ function Header() {
                     <Link className='ml-5' href="/login">Login </Link>
                 </button>
                 <button>
-                    <Link className='ml-5' href=""> Registration </Link>
+                    <Link className='ml-5' href="/registration"> Registration </Link>
                 </button>
 
             </div>
