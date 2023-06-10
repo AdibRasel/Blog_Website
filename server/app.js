@@ -76,7 +76,8 @@ app.use(Limiter)
 
 
   // Mongo DB Database Connection 
-const uri = "mongodb+srv://Rasal_Hossain:mrhthvgvbnv@cluster0.u9f9cje.mongodb.net/?retryWrites=true&w=majority";
+// const uri = "mongodb+srv://Rasal_Hossain:mrhthvgvbnv@cluster0.u9f9cje.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb://127.0.0.1:27017/";
 
   Mongose.connect(uri,{ useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB...'))

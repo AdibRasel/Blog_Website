@@ -1,7 +1,71 @@
+import { RegistrationRequest } from '@/APIRequest/APIRequest';
 import Footer from '@/components/footer/Footer';
 import Link from 'next/link';
+import { useRef } from 'react';
+
 
 function index() {
+
+    let EmailRef, FirstNameRef, LastNameRef, MobileRef, PasswordRef, LoderDisplay = useRef();
+
+
+    // const Registration = () => {
+
+        
+        // let navigateUse = useNavigate()
+        
+        const OnRegistrationBtn =()=>{
+            // let EmailRef, FirstNameRef, LastNameRef, MobileRef, PasswordRef = useRef();
+    
+            let Email = EmailRef.value;
+            let FirstName = FirstNameRef.value;
+            let LastName = LastNameRef.value;
+            let Mobile = MobileRef.value;
+            let Password = PasswordRef.value;
+            let Photo = "photolink"
+            
+    
+            //Validation 
+            if(Email.length <= 4){
+                cogoToast.warn('Please Type Curret Email Address');
+            }else if(FirstName.length <= 2){
+                cogoToast.warn('Please Type your Currect First Name');
+            }else if(LastName.length <= 2){
+                cogoToast.warn('Please Type your Currect Last Name');
+            }else if (Mobile.length <= 2){
+                cogoToast.warn('Please Type your Currect Mobile');
+            }else if(Password.length <= 3){
+                cogoToast.warn('Please Type your Currect Password');
+            }else{
+    
+                // LoderDisplay.classList.add("Display_None")
+    
+                // alert("Success")
+                RegistrationRequest(Email, FirstName, LastName, Mobile, Password, Photo).then((result)=>{
+                    if(result===true){
+                        alert('Registration Success');
+                        navigateUse ("/LoginPage")
+                    }
+    
+                    // LoderDisplay.classList.remove("Display_None")
+                })
+            }
+    
+    
+    
+    
+        }
+    
+
+    
+
+    // };
+
+    function OnRegistrationBtny(){
+        alert("Hello Word")
+    }
+
+
     return (
         <div>
 
@@ -59,41 +123,43 @@ function index() {
                                 {/* First Name  */}
                                 <div>
                                     <label for="First Name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your First Name</label>
-                                    <input type="text" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your First Name" required="" />
+                                    <input  ref={(input)=>FirstNameRef=input} type="text" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your First Name" required="" />
                                 </div>
 
                                 
                                 {/* Last Name  */}
                                 <div>
                                     <label for="First Name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Last Name</label>
-                                    <input type="text" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Last Name" required="" />
+                                    <input  ref={(input)=>LastNameRef=input} type="text" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Last Name" required="" />
                                 </div>
 
                                 {/* Mobile  */}
                                 <div>
                                     <label for="Mobile Number" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Mobile Number</label>
-                                    <input type="text" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Mobile Number" required="" />
+                                    <input  ref={(input)=>MobileRef=input}  type="text" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Mobile Number" required="" />
                                 </div>
 
                                 {/* email  */}
                                 <div>
                                     <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Email Address</label>
-                                    <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Email Address" required="" />
+                                    <input ref={(input)=>EmailRef=input} type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Email Address" required="" />
                                 </div>
 
 
                                 {/* Password  */}
                                 <div>
                                     <label for="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                                    <input type="password" name="password" id="password" placeholder="" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
+                                    <input  ref={(input)=>PasswordRef=input} type="password" name="password" id="password" placeholder="" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
                                 </div>
+
                                 {/* Confirm Password Password  */}
-                                <div>
+                                {/* <div>
                                     <label for="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Confirm Password</label>
                                     <input type="password" name="password" id="password" placeholder="" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
-                                </div>
+                                </div> */}
+
                                 <Link href=''>
-                                    <button type="submit" className="w-full text-black bg-lime-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Submit</button>
+                                    <button  onClick={OnRegistrationBtn} type="submit" className="w-full text-black bg-lime-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Submit</button>
                                 </Link>
 
                                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
